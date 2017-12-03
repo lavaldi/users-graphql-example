@@ -2,9 +2,10 @@
   "name": "users-graphql",
   "version": "1.0.0",
   "description": "A graphql small example",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "json:server": "json-server --watch db.json"
+    "json:server": "json-server --watch db.json",
+    "dev": "nodemon server.js"
   },
   "repository": "https://github.com/lavaldi/users-graphql-example.git",
   "author": "Claudia Valdivieso <claumavaldivieso@gmail.com>",
@@ -15,6 +16,7 @@
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.7",
     "json-server": "^0.12.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "nodemon": "^1.12.1"
   }
 }
