@@ -1,0 +1,52 @@
+html
+  head
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Example with GraphQL and Apollo Client
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", crossorigin="anonymous")
+  body(style="margin-top:40px;")
+    .container
+      h1
+        | Example with 
+        code GraphQL 
+        | and 
+        code Apollo Client
+      hr
+      .row
+        .col-sm
+          h2 Add User
+          div
+            .form-group
+              label(for="firstName") First Name
+              input#firstName.form-control(type="text", name="firstName")
+            .form-group
+              label(for="age") Age
+              input#age.form-control(type="text", name="age")
+            .form-group
+              label(for="company") Company
+              select#companyId.form-control(name="company")
+                option(value="") Selecciona
+                option(value="1") Apple
+                option(value="2") Netflix
+                option(value="3") Google
+            button#addUser.btn.btn-primary Add User
+        .col-sm
+          h2 Result
+          table.table
+            thead
+              tr
+                th id
+                th First Name
+                th Age
+                th Company
+                th Action
+            tbody
+      hr
+    template#showUsers
+      tr
+        td
+        td
+        td
+        td
+        td
+          button.btn.btn-danger.js-delete(id="") Delete

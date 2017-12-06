@@ -45,6 +45,14 @@ const UserType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
+        users: {
+            type: new GraphQLList(UserType),
+            args: {},
+            resolve(parentValue, args) {
+                return axios.get('http://localhost:3000/users/')
+                    .then(resp => resp.data);
+            }
+        },
         user: {
             type: UserType,
             args: { id: { type: GraphQLString } },
@@ -74,8 +82,8 @@ const mutation = new GraphQLObjectType({
                 age: { type: new GraphQLNonNull(GraphQLInt) },
                 companyId: { type: GraphQLString }
             },
-            resolve (parentValue, { firstName, age }) {
-                return axios.post('http://localhost:3000/users', { firstName, age })
+            resolve (parentValue, { firstName, age, companyId }) {
+                return axios.post('http://localhost:3000/users', { firstName, age, companyId })
                     .then(resp => resp.data);
             }
         },
