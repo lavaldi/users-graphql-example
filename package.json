@@ -7,7 +7,8 @@
     "json:server": "json-server --watch db.json",
     "dev": "nodemon server.js",
     "webpack": "webpack",
-    "start:src": "webpack-dev-server"
+    "webpack:server": "webpack-dev-server",
+    "start": "npm-run-all --parallel json:server dev webpack:server"
   },
   "repository": "https://github.com/lavaldi/users-graphql-example.git",
   "author": "Claudia Valdivieso <claumavaldivieso@gmail.com>",
@@ -30,6 +31,7 @@
     "babel-loader": "8.0.0-beta.0",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "npm-run-all": "^4.1.2",
     "pug-html-loader": "^1.1.5",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.5"
